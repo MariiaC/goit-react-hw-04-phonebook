@@ -7,7 +7,7 @@ import { Filter } from './Filter'
 import s from './App.module.css';//загальний контейнер-дів
 
 
-export const App = () => {
+export function App () {
   //перероблюємо стейт на конст. Забираєм useState з localStorage знач для змінних або робимо новий масив 'contacts'
   const [contacts, setContacts] = useState(() => {
     return JSON.parse(window.localStorage.getItem('contacts')) ?? []

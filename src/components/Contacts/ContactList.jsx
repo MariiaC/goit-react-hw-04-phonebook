@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import { ContactItem } from './ContactItem';
 
-export const ContactList = ({ contacts, handleDeleteContact  }) => 
-(
-    <ul>
+export function ContactList({ contacts, handleDeleteContact }) {
+  return (<ul>
     {contacts.map(({ id, name, number }) => (
       <ContactItem
         key={id}
         id={id}
         name={name}
         number={number}
-        onDeleteContact={() => handleDeleteContact (id)}
+        onDeleteContact={() => handleDeleteContact(id)}
       />
     ))}
   </ul>)
+}
 ;
 
 ContactList.propTypes = {

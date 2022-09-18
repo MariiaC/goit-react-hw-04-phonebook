@@ -4,7 +4,7 @@ import {useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 import s from './ContactForm.module.css';
 
-export const ContactForm =({onSubmit})=> {
+export function ContactForm ({onSubmit}) {
  const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
