@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { FiTrash2 } from 'react-icons/fi'; //іконки
 import s from './Contacts.module.css';
 
-export function ContactItem({ id, name, number, onDeleteContact }) {
-  return (<li key={id} className={s.contactItem}>
+export const ContactItem = ({ id, name, number, onDeleteContact }) => (
+  <li key={id} className={s.contactItem}>
     <div>
       <span>
         {name}: {number}
@@ -13,8 +13,8 @@ export function ContactItem({ id, name, number, onDeleteContact }) {
         Delete
       </button>
     </div>
-</li>)
-};
+  </li>)
+  ;
 
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
