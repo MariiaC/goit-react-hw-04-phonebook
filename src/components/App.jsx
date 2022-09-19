@@ -22,12 +22,7 @@ export function App () {
 
   //створюємо унікальний айдішник контакту та робимо перевірку на унікальн імя+ тел
   function addContact({ name, number }) {
-    const contact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-
+ 
     const normalizeContact = contact.name.toLocaleLowerCase();
  if (contacts.find(({ name }) => name.toLowerCase() === normalizeContact)) {
       return alert(`${name} already exists`);
@@ -35,6 +30,11 @@ export function App () {
     if (contacts.find(({ number }) => number === contact.number)) {
       return alert(`${number} already exists`);
     }
+       const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
 
     setContacts(prevState => [contact, ...prevState]);
   };
